@@ -34,7 +34,7 @@ export default function SignInScreen() {
           style={styles.logo}
         />
 
-        <Text style={styles.subtitle}>SIGN IN</Text>
+        <Text style={styles.subtitle}>Sign In</Text>
         <Text style={styles.helper}>
           Enter email or username and password here
         </Text>
