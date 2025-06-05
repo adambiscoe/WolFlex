@@ -29,7 +29,7 @@ export default StyleSheet.create({
   subtitle: {
     fontFamily: fontFamilies.main,
     justifyContent: "left",
-    fontSize: fontSizes.helper,
+    fontSize: fontSizes.subheading,
     fontWeight: "bold",
     marginTop: 5,
   },
