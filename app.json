@@ -2,9 +2,10 @@
   "expo": {
     "name": "WolFlex",
     "slug": "WolFlex",
+    "assets": ["./assets/fonts"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/WolfAlone.png",
     "scheme": "wolflex",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +14,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/WolfAlone.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
@@ -21,16 +22,16 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/WolfAlone.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
+          "backgroundImage": "./assets/images/WolfAlone.png",
           "resizeMode": "contain",
+          "imageWidth": 300,
           "backgroundColor": "#ffffff"
         }
       ],
