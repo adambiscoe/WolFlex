@@ -18,7 +18,8 @@ export default StyleSheet.create({
     height: logoWidth.signin,
     marginBottom: 20,
     resizeMode: "contain",
-    top: 20,
+    flex: 0,
+    top: 30,
   },
   title: {
     fontFamily: fontFamilies.main,

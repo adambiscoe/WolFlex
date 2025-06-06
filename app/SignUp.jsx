@@ -13,6 +13,7 @@ export default function SignUp() {
         source={require("../assets/images/WordLogo.png")}
         style={styles.logo}
       />
+
       <Text style={styles.subtitle}>Sign Up</Text>
       <View style={styles.dividerRow}>
         <View style={styles.line} />
