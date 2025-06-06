@@ -29,7 +29,8 @@ export default StyleSheet.create({
   },
   subtitle: {
     fontFamily: fontFamilies.main,
-    justifyContent: "left",
+    justifyContent: "center",
+    textAlign: "center",
     fontSize: fontSizes.subheading,
     fontWeight: "bold",
     marginTop: 5,
@@ -38,11 +39,22 @@ export default StyleSheet.create({
     fontFamily: fontFamilies.main,
     fontSize: fontSizes.regular,
     marginBottom: 20,
+    alignContent: "center",
   },
 
   input: {
     color: colors.lightgray,
     width: "100%",
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 6,
+    padding: 12,
+    marginBottom: 12,
+  },
+
+  halfInput: {
+    color: colors.lightgray,
+    width: "35%",
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 6,

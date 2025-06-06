@@ -50,6 +50,11 @@ export default function SignInScreen() {
         secureTextEntry
       />
 
+      <Text style={styles.termsText}>
+        By clicking continue, you agree to our{" "}
+        <Text style={styles.link}>Terms of Service</Text> and{" "}
+        <Text style={styles.link}>Privacy Policy</Text>
+      </Text>
       <TouchableOpacity style={styles.continueButton} onPress={handleContinue}>
         <Text style={styles.continueText}>CONTINUE</Text>
       </TouchableOpacity>
@@ -59,12 +64,6 @@ export default function SignInScreen() {
         <Text style={styles.orText}>or</Text>
         <View style={styles.line} />
       </View>
-
-      <Text style={styles.termsText}>
-        By clicking continue, you agree to our{" "}
-        <Text style={styles.link}>Terms of Service</Text> and{" "}
-        <Text style={styles.link}>Privacy Policy</Text>
-      </Text>
 
       <TouchableOpacity
         style={styles.createButton}
