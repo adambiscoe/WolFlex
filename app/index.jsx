@@ -1,4 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import "react-native-get-random-values";
+import "react-native-url-polyfill/auto";
 import LoadingIn from "./LoadingIn.jsx";
 import PasswordBirthday from "./PasswordBirthday.jsx";
 import SignIn from "./SignIn.jsx";

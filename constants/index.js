@@ -1,0 +1,3 @@
+export const supabaseUrl = "https://mkgkfxvruororkkanyng.supabase.co";
+export const supabaseAnonKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1rZ2tmeHZydW9yb3Jra2FueW5nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzMTMwODIsImV4cCI6MjA2NDg4OTA4Mn0.2myJ3GHaWzwbggbtSm66fTmbViQCOpdiLZeCpro4lfc";

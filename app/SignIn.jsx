@@ -1,8 +1,10 @@
+import * as LocalAuthentication from "expo-local-authentication";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import {
   Alert,
   Image,
+  Platform,
   Text,
   TextInput,
   TouchableOpacity,
@@ -15,8 +17,33 @@ export default function SignInScreen() {
   const [password, setPassword] = useState("");
   const router = useRouter();
 
+  //NEED TO REMOVE FACE AUTH AT SOME POINT< OR MAKE IT WORK
   const handleContinue = () => {
-    Alert.alert("Logging in with:", `${email}`);
+    const authenticateWithoutFaceID = async () => {
+      if (Platform.OS === "ios") {
+        const supportedTypes =
+          await LocalAuthentication.supportedAuthenticationTypesAsync();
+
+        const isFaceIDAvailable = supportedTypes.includes(
+          LocalAuthentication.AuthenticationType.FACIAL_RECOGNITION
+        );
+
+        if (isFaceIDAvailable) {
+          console.log("Face ID is available. Skipping biometric auth.");
+          return false; // Skip Face ID usage
+        }
+      }
+
+      //check if email and password valid
+      if (email === "amb@ncsu.edu" && password === "password") {
+        router.push("/PasswordBirthday");
+      } else {
+        Alert.alert(
+          "Error",
+          `Your log in information was not correct for email: ${email}`
+        );
+      }
+    };
   };
 
   return (

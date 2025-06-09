@@ -9,6 +9,8 @@ export default function SignUp() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
+  const handleContinue = () => {};
+
   const router = useRouter();
   return (
     <View style={styles.container}>
@@ -46,10 +48,7 @@ export default function SignUp() {
         <Text style={styles.link}>Terms of Service</Text> and{" "}
         <Text style={styles.link}>Privacy Policy</Text>
       </Text>
-      <TouchableOpacity
-        style={styles.createButton}
-        onPress={() => router.push("/PasswordBirthday")}
-      >
+      <TouchableOpacity style={styles.createButton} onPress={handleContinue}>
         <Text style={styles.createText}>CONTINUE</Text>
       </TouchableOpacity>
       <View style={styles.dividerRow}>
