@@ -1,15 +1,41 @@
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  Image,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { supabase } from "../lib/supabase";
 import styles from "../styles/common";
 import { colors } from "../styles/theme";
 
 export default function SignUp() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleContinue = () => {};
+  const handleContinue = async () => {
+    if (!email || !password) {
+      Alert.alert("Error", "Please fill out all fields.");
+      return;
+    }
+
+    console.log(email);
+    console.log(password);
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+
+    console.log("hello");
+    console.log("session", data);
+    console.log("error", error);
+    if (error) {
+      Alert.alert("sign up", error.message);
+    }
+  };
 
   const router = useRouter();
   return (
@@ -19,28 +45,22 @@ export default function SignUp() {
         style={styles.logo}
       />
       <Text style={styles.subtitle}>Welcome to WolFlex!</Text>
-      <Text style={styles.helper}> What's your name?</Text>
-      <View flexDirection="row" justifyContent="space-between" gap="20">
-        <TextInput
-          style={[styles.halfInput, { alignSelf: "flex-start" }]}
-          placeholder="First Name"
-          placeholderTextColor={colors.lightgray}
-          value={firstName}
-        />
-        <TextInput
-          style={[styles.halfInput, { alignSelf: "flex-end" }]}
-          placeholder="Last Name"
-          placeholderTextColor={colors.lightgray}
-          value={lastName}
-        />
-      </View>
 
       <Text style={styles.helper}>Enter a valid email address here</Text>
       <TextInput
         style={styles.input}
         placeholder="email@domain.com"
         placeholderTextColor={colors.lightgray}
-        value={email}
+        onChangeText={setEmail}
+      />
+
+      <Text style={styles.helper}>Enter a valid password here</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        placeholderTextColor={colors.lightgray}
+        secureTextEntry
+        onChangeText={setPassword}
       />
 
       <Text style={styles.termsText}>
