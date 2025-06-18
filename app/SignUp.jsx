@@ -15,25 +15,29 @@ import { colors } from "../styles/theme";
 export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleContinue = async () => {
     if (!email || !password) {
       Alert.alert("Error", "Please fill out all fields.");
       return;
+    } else if (password !== confirmPassword) {
+      Alert.alert("Error", "Passwords must match.");
+      return;
     }
-
-    console.log(email);
-    console.log(password);
+    const trimmedEmail = email.trim();
     const { data, error } = await supabase.auth.signUp({
-      email,
+      email: trimmedEmail,
       password,
     });
 
-    console.log("hello");
     console.log("session", data);
     console.log("error", error);
     if (error) {
-      Alert.alert("sign up", error.message);
+      console.log(trimmedEmail);
+      Alert.alert("Error", error.message + ".");
+    } else {
+      router.push("/PasswordBirthday");
     }
   };
 
@@ -61,6 +65,13 @@ export default function SignUp() {
         placeholderTextColor={colors.lightgray}
         secureTextEntry
         onChangeText={setPassword}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Confirm Password"
+        placeholderTextColor={colors.lightgray}
+        secureTextEntry
+        onChangeText={setConfirmPassword}
       />
 
       <Text style={styles.termsText}>

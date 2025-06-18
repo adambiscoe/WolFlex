@@ -6,7 +6,8 @@ An unofficially NC State themed workout and calorie intake tracker. It allows us
 
 1.  Coded in JavaScript and TypeScript languages on Visual Studio Code.
 2.  React Native framework using Expo Router navigation.
-3.  Primarily tested through physical IOS device using the Expo Go mobile app.
+3.  Authentication and user database through Supabase.
+4.  Primarily tested through physical IOS device using the Expo Go mobile app.
 
 ## Installation
 
@@ -30,3 +31,5 @@ An unofficially NC State themed workout and calorie intake tracker. It allows us
 4.  Figma for UI Design (https://www.figma.com/design/LLCsTp0O1xWRwnpWbZx3NQ/WolFlex?node-id=28-115&t=VYhHieHMtj6xxdRe-1)
 5.  Canva for logo design, color scheme and font idea (https://www.canva.com/design/DAGnPhWh2BM/29RD9HEPWtNMjQFo8BxSzQ/edit?ui=eyJIIjp7IkEiOnRydWV9fQ)
 6.  Google Fonts for the font-Anton SC Regular (https://fonts.google.com/specimen/Anton+SC)
+7.  Supabase React Native API (https://supabase.com/docs/guides/auth/quickstarts/react-native
+    )
