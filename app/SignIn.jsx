@@ -1,6 +1,14 @@
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  Alert,
+  Image,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { supabase } from "../lib/supabase";
 import styles from "../styles/common";
 
 export default function SignInScreen() {
@@ -9,7 +17,27 @@ export default function SignInScreen() {
   const router = useRouter();
 
   //NEED TO REMOVE FACE AUTH AT SOME POINT< OR MAKE IT WORK
-  const handleContinue = () => {};
+  const handleContinue = async () => {
+    if (!email || !password) {
+      Alert.alert("Error", "Please fill out all fields.");
+      return;
+    }
+
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
+
+    console.log("session", data);
+    console.log("error", error);
+    if (error) {
+      console.log(email);
+      console.log(password);
+      Alert.alert("Error", error.message + ".");
+    } else {
+      router.push("/Home");
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -27,7 +55,6 @@ export default function SignInScreen() {
         style={styles.input}
         placeholder="email@domain.com"
         placeholderTextColor="#808080"
-        value={email}
         onChangeText={setEmail}
         keyboardType="email-address"
         autoCapitalize="none"
@@ -37,7 +64,6 @@ export default function SignInScreen() {
         style={styles.input}
         placeholder="Password"
         placeholderTextColor="#808080"
-        value={password}
         onChangeText={setPassword}
         secureTextEntry
       />

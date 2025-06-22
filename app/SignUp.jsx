@@ -34,7 +34,6 @@ export default function SignUp() {
     console.log("session", data);
     console.log("error", error);
     if (error) {
-      console.log(trimmedEmail);
       Alert.alert("Error", error.message + ".");
     } else {
       router.push("/PasswordBirthday");
