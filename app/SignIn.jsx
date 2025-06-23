@@ -34,8 +34,6 @@ export default function SignInScreen() {
       console.log(email);
       console.log(password);
       Alert.alert("Error", error.message + ".");
-    } else {
-      router.push("/Home");
     }
   };
 

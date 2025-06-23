@@ -4,7 +4,7 @@ import "react-native-url-polyfill/auto";
 import LoadingIn from "./LoadingIn.jsx";
 import PasswordBirthday from "./PasswordBirthday.jsx";
 
-import Home from "./Home.jsx";
+import Home from "./(main)/Home.jsx";
 import SignIn from "./SignIn.jsx";
 import SignUp from "./SignUp.jsx";
 
