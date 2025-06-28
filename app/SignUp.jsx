@@ -36,7 +36,7 @@ export default function SignUp() {
     if (error) {
       Alert.alert("Error", error.message + ".");
     } else {
-      router.push("/PasswordBirthday");
+      router.push("/SignUpInfo");
     }
   };
 

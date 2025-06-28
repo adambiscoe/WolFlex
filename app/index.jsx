@@ -2,7 +2,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import "react-native-get-random-values";
 import "react-native-url-polyfill/auto";
 import LoadingIn from "./LoadingIn.jsx";
-import PasswordBirthday from "./PasswordBirthday.jsx";
+import SignUpInfo from "./SignUpInfo.jsx";
 
 import Home from "./(main)/Home.jsx";
 import SignIn from "./SignIn.jsx";
@@ -29,8 +29,8 @@ export default function App() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="PasswordBirthday"
-        component={PasswordBirthday}
+        name="SignUpInfo"
+        component={SignUpInfo}
         options={{ headerShown: false }}
       />
       <Stack.Screen

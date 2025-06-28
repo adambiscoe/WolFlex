@@ -62,6 +62,17 @@ export default StyleSheet.create({
     marginBottom: 12,
   },
 
+  largeInput: {
+    color: colors.lightgray,
+    width: "250",
+    height: "120",
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 6,
+    padding: 12,
+    marginBottom: 12,
+  },
+
   continueButton: {
     backgroundColor: colors.red,
     paddingVertical: 14,
